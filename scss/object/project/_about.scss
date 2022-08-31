@@ -1,0 +1,114 @@
+@use "../../foundation/_mixin.scss";
+
+.p-about {
+   position       : relative;
+   display        : flex;
+   flex-direction : row;
+   justify-content: center;
+   &__left {
+      width     : 250px;
+      text-align: center;
+   }
+   &__term--left {
+      position: absolute;
+      top     : 0;
+      left    : 250px;
+      width   : 70vh;
+      height  : 70vh;
+   }
+   &__item {
+      &--html {
+         @include mixin.skill-term-off;
+         &:hover {
+            @include mixin.skill-term-on;
+         }
+      }
+      &--css {
+         @include mixin.skill-term-off;
+         &:hover {
+            @include mixin.skill-term-on;
+         }
+      }
+      &--js {
+         @include mixin.skill-term-off;
+         &:hover {
+            @include mixin.skill-term-on;
+         }
+      }
+      &--wp {
+         @include mixin.skill-term-off;
+         &:hover {
+            @include mixin.skill-term-on;
+         }
+      }
+   }
+
+   &__right {
+      @extend .p-about__left;
+   }
+   &__term--right {
+      @extend .p-about__term--left;
+   }
+   &__item {
+      &--ai {
+         @include mixin.skill-term-off;
+         &:hover {
+            @include mixin.skill-term-on;
+         }
+      }
+      &--ps {
+         @include mixin.skill-term-off;
+         &:hover {
+            @include mixin.skill-term-on;
+         }
+      }
+      &--xd {
+         @include mixin.skill-term-off;
+         &:hover {
+            @include mixin.skill-term-on;
+         }
+      }
+      &--figma {
+         @include mixin.skill-term-off;
+         &:hover {
+            @include mixin.skill-term-on;
+         }
+      }
+   }
+
+   &__center {
+      position: relative;
+      ul {
+         display: block;
+      }
+   }
+   &__icon--html {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      transition: opacity 3s;
+   }
+   &__icon--css {
+      @extend .p-about__icon--html;
+   }
+   &__icon--js {
+      @extend .p-about__icon--html;
+   }
+   &__icon--wp {
+      @extend .p-about__icon--html;
+   }
+   &__icon--ai {
+      @extend .p-about__icon--html;
+   }
+   &__icon--ps {
+      @extend .p-about__icon--html;
+   }
+   &__icon--xd {
+      @extend .p-about__icon--html;
+   }
+   &__icon--figma {
+      @extend .p-about__icon--html;
+   }
+
+}

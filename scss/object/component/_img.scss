@@ -1,0 +1,14 @@
+@use "../../foundation/_mixin.scss";
+
+.c-img {
+   &__scroll {
+      height: 8vh;
+      width : 14px;
+   }
+   &__swiper {
+      object-fit   : contain;
+      width        : auto;
+      height       : 100%;
+      border-radius: 50%;
+   }
+}

@@ -1,0 +1,63 @@
+@use "../../foundation/_mixin.scss";
+
+.p-area {
+   position: relative;
+
+   &__main {
+      position   : absolute;
+      top        : 50%;
+      left       : 50%;
+      transform  : translate(-50%, -50%);
+      text-align : center;
+      line-height: 28vh;
+   }
+
+   &__front-menu--lv1 {
+      position   : absolute;
+      text-align : center;
+      line-height: 14vh;
+   }
+
+   &__front-menu--lv2 {
+      @extend .p-area__front-menu--lv1;
+   }
+
+   &__front-menu--lv3 {
+      @extend .p-area__front-menu--lv1;
+   }
+
+   &__scroll {
+      display: inline-block;
+      text-align: center;
+      width     : 70vh;
+      position  : absolute;
+      top       : 52vh;
+      left      : 34vh;
+      &--img {
+         @include mixin.animation(
+         $name: kf-scroll-anime,
+         $iteration-count: infinite,
+         $duration: 2s,
+         $timing-function: linear
+         );
+      }
+      &--font {
+         transform: rotate(90deg);
+         position: absolute;
+         left: -5px;
+         top: 13px;
+      }
+   }
+}
+
+@keyframes kf-scroll-anime {
+   0%,
+   50%,
+   100% {
+     transform: translateY(10%);
+   }
+   30%,
+   70% {
+     transform: none;
+   }
+}

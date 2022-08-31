@@ -1,0 +1,96 @@
+@use "variables";
+
+//---レスポンシブ用（pcは初期値）---//
+@mixin media($breakpoint: pc) {
+    @media #{map-get(variables.$breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+//font
+@mixin fontRed {
+    font-family: 'Shippori Mincho', serif;
+    color: variables.$red;
+}
+@mixin mainFont {
+    font-family: 'Shippori Mincho', serif;
+    color: variables.$mainColor;
+}
+@mixin mainRed {
+   font-family: 'Shippori Mincho', serif;
+   color: variables.$mainRed;
+}
+
+@mixin  fontWhiteTitle {
+   font-family: kokuryu, sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   color: variables.$white;
+}
+
+@mixin fontWhiteText { //本文用
+   font-family: shinryu, sans-serif;
+   font-weight: 400;
+   font-style: normal;
+   //font-family: 'Shippori Mincho', serif;
+   //font-family: 'Potta One', serif;
+   color: variables.$white;
+}
+
+//animation
+@mixin animation(
+   //初期値
+  $name,
+  $duration: 1s,
+  $timing-function: ease,
+  $delay: 0s,
+  $iteration-count: 1,
+  $direction: normal,
+  $fill-mode: forwards
+) {
+   //プロパティのネスト記法
+  animation: {
+    name: $name;
+    duration: $duration;
+    timing-function: $timing-function;
+    delay: $delay;
+    iteration-count: $iteration-count;
+    direction: $direction;
+    fill-mode: $fill-mode;
+  }
+}
+
+@mixin skill-term-off {
+   dl {
+      z-index: -1;
+   }
+   dt {
+      opacity: 0;
+      transform: translateY(100px);
+   }
+   dd {
+      
+      opacity: 0;
+      transform: translateY(100px);
+   }
+   
+}
+
+@mixin skill-term-on {
+   dl {
+      transition: all;
+      z-index: 100;
+   }
+   dt {
+      transition: all 1s;
+      transform: translateY(0);
+      opacity: 1;
+   }
+   dd {
+      transition: all 1s;
+      transition-delay: 0.5s;
+      transform: translateY(0);
+      opacity: 1;
+   }
+}
+

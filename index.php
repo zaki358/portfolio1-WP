@@ -10,7 +10,7 @@
 
    <div id="l-container__home">
       <header id="l-header">
-         <a class="p-header__link--front" href="front-page.html">
+         <a class="p-header__link--front" href="<?php echo esc_url(home_url('/'));?>">
             <img src="" class="p-header__logo c-logo--top" alt="ロゴ用画像">
          </a>
          <nav class="p-header__menu">

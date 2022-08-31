@@ -1,0 +1,78 @@
+@use "../../foundation/_mixin.scss";
+
+.p-header {
+   &__link--front {
+      display: inline-block;
+      width  : 300px;
+      height : 100%;
+   }
+   &__logo {}
+   &__menu {
+      ul {
+      //margin-right  : 100px;
+      display       : flex;
+      flex-direction: row;
+      }
+   }
+   &__list {
+      width     : 100px;
+      padding   : 6px 8px;
+      margin    : 4px 8px;
+      text-align: center;
+      position: relative;
+      a:first-of-type{}
+      a:nth-of-type(2) {
+         width    : 84px;
+         position : absolute;
+         left     : 50%;
+         top      : calc(50% - 1.3rem);
+         transform: translate(-50%,0%);
+         opacity  : 0;
+         // transition-property : opacity;
+	      // transition-delay    : 0.8 s;
+      }
+      &:hover {
+         a:first-of-type{
+            @include mixin.animation(
+               $name    : kf-3d-rotate-anime,
+               $duration: 0.5s
+            );
+         }
+         a:nth-of-type(2) {
+            @include mixin.animation(
+               $name    : kf-opacity-anime,
+               $duration: 0.5s
+            );
+         }
+      }
+   }
+}
+
+@keyframes kf-3d-rotate-anime {
+   0% {
+      transform: rotate3d(0, -1, 0, 0deg);
+      opacity: 1;
+   }
+   25% {
+      transform: rotate3d(0, -1, 0, 45deg);
+      opacity: 1;
+   }
+   50% {
+      transform: rotate3d(0, -1, 0, 90deg);
+      opacity: 1;
+   }
+   75% {
+      transform: rotate3d(0, -1, 0, 135deg);
+      opacity: 0;
+   }
+   100% {
+      transform: rotate3d(0, -1, 0, 180deg);
+      opacity: 0;
+   }
+}
+
+@keyframes kf-opacity-anime {
+   0% {opacity: 0;}
+   75% {opacity: 0;}
+   100% {opacity: 1;}
+}
