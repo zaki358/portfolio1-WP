@@ -1,16 +1,14 @@
 <?php get_header(); ?>
 
-<body>
-   
-   <!-- ページ偏移 -->
-   <div class="deviation">
+<!-- ページ偏移 -->
+<div class="deviation">
       <div class="deviation__main"></div>
       <p class="deviation__icon--eye"></p>
    </div>
 
    <div id="l-container__home">
       <header id="l-header">
-         <a class="p-header__link--front" href="<?php echo esc_url(home_url('/'));?>">
+         <a class="p-header__link--front" href="<?php echo esc_url(home_url('/')); ?>">
             <img src="" class="p-header__logo c-logo--top" alt="ロゴ用画像">
          </a>
          <nav class="p-header__menu">
@@ -65,10 +63,11 @@
          </div>
       </main>
    </div>
-   <script src="../script/loder.js"></script>
+   <?php get_footer(); ?>
+   <!-- <script src="../script/loder.js"></script>
    
    <script src="../script/rotate.js"></script>
    <script src="../dist/bundle.js"></script>
 </body>
 
-</html>
+</html> -->
