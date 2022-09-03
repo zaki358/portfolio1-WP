@@ -21,12 +21,7 @@
    </div>
 
 <?php
-   if(is_home() || is_front_page()){
-      $className = "l-container__home";
-   }
-   else {
-      $className = "l-container";
-   }
+   global $className, $about, $skill, $work;
 ?>
    <div id=<?php echo $className?>>
       <header id="l-header">
@@ -36,16 +31,16 @@
          <nav class="p-header__menu">
             <ul>
                <li class="p-header__list">
-                  <a class="c-font__header-menu c-link__header-menu--en" href="<?php echo get_permalink( get_page_by_path( 'about' )->ID ); ?>">About</a>
-                  <a class="c-font__header-menu c-link__header-menu--ja" href="<?php echo get_permalink( get_page_by_path( 'about' )->ID ); ?>">自己紹介</a>
+                  <a class="c-font__header-menu c-link__header-menu--en" href="<?php echo get_permalink( $about ); ?>">About</a>
+                  <a class="c-font__header-menu c-link__header-menu--ja" href="<?php echo get_permalink( $about ); ?>">自己紹介</a>
                </li>
                <li class="p-header__list">
-                  <a class="c-font__header-menu c-link__header-menu--en" href="page2.html">Skill</a>
-                  <a class="c-font__header-menu c-link__header-menu--ja" href="page2.html">技能</a>
+                  <a class="c-font__header-menu c-link__header-menu--en" href="<?php echo get_permalink( $skill ); ?>">Skill</a>
+                  <a class="c-font__header-menu c-link__header-menu--ja" href="<?php echo get_permalink( $skill ); ?>">技能</a>
                </li>
                <li class="p-header__list">
-                  <a class="c-font__header-menu c-link__header-menu--en" href="page3.html">Work</a>
-                  <a class="c-font__header-menu c-link__header-menu--ja" href="page3.html">制作実績</a>
+                  <a class="c-font__header-menu c-link__header-menu--en" href="<?php echo get_permalink( $work ); ?>">Work</a>
+                  <a class="c-font__header-menu c-link__header-menu--ja" href="<?php echo get_permalink( $work ); ?>">制作実績</a>
                </li>
             </ul>
          </nav>
