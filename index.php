@@ -11,7 +11,7 @@
                   </h2>
                   <ul class="c-circle__principal">
                      <li class="p-area__front-menu--lv1 c-circle__menu">
-                        <a class="c-font__main-menu--list" href="page1.html">力</a>
+                        <a class="c-font__main-menu--list" href="<?php echo get_permalink( get_page_by_path( 'about' )->ID ); ?>">己</a>
                      </li>
                      <li class="p-area__front-menu--lv2 c-circle__menu">
                         <a class="c-font__main-menu--list" href="page2.html">技</a>

@@ -20,7 +20,15 @@
       <p class="deviation__icon--eye"></p>
    </div>
 
-   <div id="l-container__home">
+<?php
+   if(is_home() || is_front_page()){
+      $className = "l-container__home";
+   }
+   else {
+      $className = "l-container";
+   }
+?>
+   <div id=<?php echo $className?>>
       <header id="l-header">
          <a class="p-header__link--front" href="<?php echo esc_url(home_url('/')); ?>">
             <img src="" class="p-header__logo c-logo--top" alt="ロゴ用画像">
@@ -28,8 +36,8 @@
          <nav class="p-header__menu">
             <ul>
                <li class="p-header__list">
-                  <a class="c-font__header-menu c-link__header-menu--en" href="page1.html">About</a>
-                  <a class="c-font__header-menu c-link__header-menu--ja" href="page1.html">自己紹介</a>
+                  <a class="c-font__header-menu c-link__header-menu--en" href="<?php echo get_permalink( get_page_by_path( 'about' )->ID ); ?>">About</a>
+                  <a class="c-font__header-menu c-link__header-menu--ja" href="<?php echo get_permalink( get_page_by_path( 'about' )->ID ); ?>">自己紹介</a>
                </li>
                <li class="p-header__list">
                   <a class="c-font__header-menu c-link__header-menu--en" href="page2.html">Skill</a>
